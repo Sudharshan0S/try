@@ -1,10 +1,6 @@
 # Introduction to Docker: Creating and Running a Containerized Web Application on Windows
 
-> Source: `cc lab manual - Docker expt (2).pdf`
->
-> Transcribed from the uploaded PDF. Commands, code statements, examples, and their order are retained as extracted. No commands have been rewritten.
-
----
+<!-- Text transcription of the uploaded PDF. Original wording, headings, commands, examples, and page sequence are retained. Images are omitted. -->
 
 CAMBRIDGE INSTITUTE OF TECHNOLOGY
                       (An Autonomous Institute affiliated to VTU)
@@ -30,6 +26,7 @@ most Windows users. Current requirements include supported Windows editions/buil
 64-bit processor with SLAT, 8 GB RAM, and hardware virtualization enabled.
 
 
+
 Docker Desktop Installation on Windows
 Step 1: Download Docker Desktop
 
@@ -50,6 +47,8 @@ the default backend for typical Windows installations.
 
 Step 3: Start Docker Desktop
 
+---
+
 After installation:
 
 Start Menu
@@ -57,6 +56,8 @@ Start Menu
 Docker Desktop
 
 Wait until Docker Desktop indicates that Docker is running.
+
+
 
 
 Verify Docker Installation
@@ -79,6 +80,8 @@ docker info
 If Docker is running correctly, information about the Docker Engine will be displayed.
 
 
+
+
 Experiment 1 – Run Hello World Container
 Before running the web server, students should verify that containers can be executed.
 
@@ -95,6 +98,8 @@ The terminal should display a message similar to:
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
+
+---
 
 Observation
 Docker Client
@@ -127,6 +132,7 @@ CMD[“python”, “app.py”]
    Take 1 or more screenshots of all the above steps.
 
 
+
 Experiment 3 – Run an Nginx Web Server
 This is the main experiment.
 
@@ -143,10 +149,14 @@ Execute:
 
 docker images
 
+---
+
 You should see an entry similar to:
 
 REPOSITORY       TAG          IMAGE ID           CREATED        SIZE
 nginx            latest       xxxxxxxxxxxx       ...            ...
+
+
 
 
 Step 3: Create and Run the Container
@@ -172,6 +182,8 @@ Port 8080           ─────────────→      Port 80
                                       Nginx Server
 
 
+
+
 Step 4: Check the Running Container
 Execute:
 
@@ -187,7 +199,11 @@ The container should have a status similar to:
 Up ...
 
 
+
+
 Step 5: Access the Web Application
+
+---
 
 Open a web browser and enter:
 
@@ -200,6 +216,8 @@ Welcome to nginx!
 
 This demonstrates that a web server running inside a Docker container can be accessed
 from the Windows host through port mapping.
+
+
 
 
 Step 6: View Container Logs
@@ -220,6 +238,8 @@ docker logs mynginx
 again to observe HTTP request entries.
 
 
+
+
 Step 7: Stop the Container
 Execute:
 
@@ -233,7 +253,11 @@ The container will no longer appear among running containers.
 
 To see stopped containers:
 
+---
+
 docker ps -a
+
+
 
 
 Step 8: Start the Container Again
@@ -252,6 +276,8 @@ http://localhost:8080
 The Nginx page should appear again.
 
 
+
+
 Step 9: Remove the Container
 First stop it:
 
@@ -268,6 +294,7 @@ docker ps -a
 The mynginx container should no longer be listed.
 
 
+
 Important Docker Commands
 Students should get familiar with the following commands.
 
@@ -277,7 +304,9 @@ docker info               Display Docker Engine information
 docker pull nginx         Download Nginx image
 docker images             List Docker images
 
-       Command                      Purpose
+---
+
+Command                      Purpose
 docker run nginx     Create and run Nginx container
 docker ps            List running containers
 docker ps -a         List all containers
@@ -286,6 +315,8 @@ docker stop mynginx Stop container
 docker start mynginx Start stopped container
 docker rm mynginx    Remove container
 docker rmi nginx     Remove Docker image
+
+
 
 
 Docker Architecture for This Experiment
@@ -323,8 +354,12 @@ Docker Architecture for This Experiment
                   Nginx Welcome Page
 
 
+
+
 Screenshots to Include for Experiment 3
 Students should capture the following screenshots:
+
+---
 
 Screenshot 1: Docker Desktop running
 
