@@ -1,18 +1,15 @@
 # DevOps Experiment using Jenkins on Windows but without using Docker
 
-> Source: `cc lab manual - DevOps Jenkins expt (1).pdf`
->
-> Transcribed from the uploaded PDF. Commands, code statements, examples, and their order are retained as extracted. No commands have been rewritten.
+<!-- Text-only Markdown transcription of the uploaded 13-page PDF. Original step titles, paragraphs, commands, examples, and order are retained. Images/screenshots are intentionally omitted. -->
 
----
-
-CAMBRIDGE INSTITUTE OF TECHNOLOGY
+                          CAMBRIDGE INSTITUTE OF TECHNOLOGY
                          (An Autonomous Institute affiliated to VTU)
 
                               K.R.PURAM, BENGALURU–560036
      Course: Cloud Computing Lab                             Course Code: CS402
 
      Sem: VII Sem CSE
+
 
 
 DevOps Experiment using Jenkins on Windows but without using
@@ -34,6 +31,8 @@ java version "21.x.x"
 If java is not recognized, Java's PATH needs to be configured.
 
 
+
+
 2. Download Jenkins for Windows
 Go to the official Jenkins website and download the Windows installer (.msi).
 
@@ -46,6 +45,8 @@ Download Jenkins → Windows → Installer
 The installer will look something like:
 
 Jenkins.msi
+
+---
 
 3. Install Jenkins
 Double-click the downloaded .msi file.
@@ -70,6 +71,8 @@ Select “Run service as LocalSystem” option:
 Jenkins normally uses: 8080
 
 
+
+
 For a basic college/lab setup, this is fine.
 
 Take a screenshot here - 1
@@ -77,6 +80,8 @@ Take a screenshot here - 1
 Step 4 — Port
 
 So Jenkins will be accessible at:
+
+---
 
 http://localhost:8080
 
@@ -92,6 +97,8 @@ Make sure it detects Java 21.
 If it does not auto detect Java 21 then manually change to path of Java 21 as shown below
 
 
+
+
 Step 6 — Install
 
 Click: Install
@@ -101,10 +108,14 @@ Wait for the installation to finish.
 Take a screenshot here - 2
 
 
+
+
 4. Start Jenkins
 After installation, Jenkins normally starts automatically as a Windows service.
 
 You can check it:
+
+---
 
         1. Press Windows + R
         2. Type:
@@ -125,6 +136,8 @@ If it is stopped:
 Right-click → Start
 
 
+
+
 5. Open Jenkins
 Open Chrome/Edge and go to:
 
@@ -136,6 +149,8 @@ You should see:
 Unlock Jenkins
 
 Jenkins will ask for an initial administrator password.
+
+
 
 
 6. Find the Jenkins password
@@ -150,6 +165,8 @@ a8f3c9......
 Copy it.
 
 Paste it into the Jenkins browser page.
+
+---
 
 If that path doesn't exist on your installation, the Jenkins service configuration may show a
 different JENKINS_HOME location.
@@ -173,6 +190,8 @@ Jenkins will install commonly required plugins.
 Wait until installation finishes.
 
 
+
+
 8. Create your Jenkins account
 You will see:
 
@@ -190,15 +209,21 @@ Then click:
 Save and Continue
 
 
+
+
 9. Jenkins is ready
 You should now see the Jenkins dashboard.
 
 Your Jenkins address is:
 
+---
+
 http://localhost:8080
 (use the correct port number from Step 4)
 
 You can use this address whenever Jenkins is running.
+
+
 
 
 10. Create your first Jenkins job
@@ -221,6 +246,8 @@ OK
 Take a screenshot here - 3
 
 
+
+
 11. Add a simple test command
 Scroll down to:
 
@@ -238,6 +265,8 @@ echo Jenkins is running successfully!
 Click:
 
 Save
+
+---
 
 12. Run the Jenkins job
 On the project (i.e MyFirstProject) page, click:
@@ -260,6 +289,8 @@ Finished: SUCCESS
 
 
       This means Jenkins is working correctly.
+
+
 
 
 13. Run a C program using Jenkins
@@ -287,6 +318,8 @@ studio or any other C compiler instead of MinGW-w64 to compile the C program)
 gcc –version
 
 Restart Jenkins: Windows + R
+
+---
 
                 services.msc
 
@@ -339,6 +372,8 @@ The overall process is:
     Your Code
      ↓
 
+---
+
    Git / GitHub
       ↓
     Jenkins
@@ -370,6 +405,7 @@ Run test cases
 Generate result
 
 
+
 Integrating Jenkins with GitHub Repository and Executing a C
 Program: (This is an optional step for learning/practice and not
 for submission)
@@ -388,7 +424,11 @@ Example:
 git version 2.x.x
 
 
+
+
 Prerequisites
+
+---
 
     1. Java installed.
     2. Jenkins installed and running.
@@ -437,6 +477,8 @@ git config --list
 
 and continue with below Else steps.
 
+---
+
 Else
 
 Open Command Prompt inside the project folder.
@@ -476,6 +518,7 @@ Freestyle Project
 Click-> OK
 
 
+
 Step 6: Configure Source Code Management
 Select Git under “Source Code Management”
 Repository URL
@@ -485,10 +528,13 @@ https://github.com/<username>/Jenkins_CC_Lab.git
 Step 7: Configure Branch
 Under
 
+---
+
 Branches to build
 Enter
 */main
 (if you see */master, change it to */main)
+
 
 
 Step 8: Configure Build Step
@@ -530,6 +576,8 @@ git add
 git commit
     │
 git push
+
+---
 
    ▼
 GitHub Repository
